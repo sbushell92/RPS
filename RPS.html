@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+
+
+    <script>
+
+// Computer Choice
+
+function computerChoice() {
+    let moves = ["ROCK", "PAPER", "SCISSORS"];
+    let randomMove =  moves[Math.floor(Math.random() * moves.length)];
+    console.log("Computer Chooses........ :", randomMove);
+    return randomMove;
+}
+
+// Player Choice
+function playerChoice() {
+    let playerInput = prompt("What would you like to select? Rock, Paper or Scissors?");
+    console.log("Player Chooses........:", playerInput);
+    return playerInput.toUpperCase();
+}
+
+// Game Function
+
+function playRound() {
+
+const player = playerChoice();
+const computer = computerChoice();
+
+if (computer === player) {
+    console.log("Nobody Wins, It's a Draw!")
+} else if (computer === "ROCK" && player === "SCISSORS") {
+    console.log("You Lose")
+    
+} else if (computer === "SCISSORS" && player === "PAPER") {
+    console.log("You Lose")
+    computerScore++
+    return false
+} else if (computer === "PAPER" && player === "SCISSORS") {
+    console.log("You Win!")
+    playerScore++
+    return true
+} else if (computer === "PAPER" && player === "ROCK") {
+    console.log("You Lose!")
+    computerScore++
+    return false
+} else if (computer === "SCISSORS" && player === "ROCK") {
+    console.log("You Win!")
+    playerScore++
+    return true
+} else if (computer === "ROCK" && player === "PAPER") {
+    console.log("You Win")
+    playerScore++
+    return true
+} else {
+    console.log("Something Went Wrong :/")
+}
+}
+
+computerScore = 0
+playerScore = 0
+
+// Play 5 Rounds - Find out how to loop and print overall winner at the end.
+
+playRound();
+console.log("Computer " + computerScore + " : " + playerScore + " Player") ;
+playRound();
+console.log("Computer " + computerScore + " : " + playerScore + " Player") ;
+playRound();
+console.log("Computer " + computerScore + " : " + playerScore + " Player") ;
+playRound();
+console.log("Computer " + computerScore + " : " + playerScore + " Player") ;
+playRound();
+console.log("Computer " + computerScore + " : " + playerScore + " Player") ;
+
+
+
+    </script>
+    </body>
+</html>
